@@ -17,6 +17,8 @@ npm i webpack-dev-server -D
 npm i -D style-loader css-loader
 npm i -D mini-css-extract-plugin
 npm i -D clean-webpack-plugin
+npm i lodash
+npm i lodash-es
 ```
 
 ## webpack?
@@ -35,6 +37,13 @@ webpack의 핵심개념입니다. webpack.config.js에서 관리하며 html, css
 - plugins: 로더는 특정 유형의 모듈을 변환하는 데 사용되지만, 플러그인을 활용하여 번들을 최적화하거나, 애셋을 관리하고, 또 환경 변수 주입등과 같은 광범위한 작업을 수행 할 수 있습니다.
 - mode: mode 파라미터를 development, production 또는 none으로 설정하면 webpack에 내장된 환경별 최적화를 활성화 할 수 있습니다. 기본값은 production 입니다.
 - devServer: dev 환경에서 직접 실행가능하며 일반적으로 dist폴더에 해당 모듈을 합쳐서 만들어진 파일을 실행가능합니다. 포트설정도 가능합니다.
+
+## 추가적인 Tips
+
+lodash 란? native 자바스크립트에서 지원하지 않는 성능이 보장된 다양한 메소드르 가지고 있는 라이브러리. 다만, 빌드를 하면 번들러 파일이 매우 무거워져 성능이 안좋아집니다.
+우리가 사용하는 웹팩은 Tree Shaking을 지원하기 때문에 사용하지 않는 함수를 없애고 빌드가 가능합니다.
+하지만 lodash는 CommonJS를 사용하기 때문에 불필요한 함수까지 사용하기 때문에 번들러 파일이 매우 무거워집니다.
+이러한 문제점을 해결하기 위해 "lodash-es"
 
 ## 결론
 
