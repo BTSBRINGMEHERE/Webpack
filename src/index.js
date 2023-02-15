@@ -4,6 +4,7 @@ import "./header.css";
 import logo1 from "./images/karina.jpeg";
 // import logo2 from "./images/karina2.jpeg";
 import List from "./List";
+import { each } from "lodash-es/each";
 
 // const text = hello("<h1>나는 유영빈!!</h1>");
 // const num = add(1, 2);
@@ -32,5 +33,11 @@ const users = [
 		name: "윈터",
 	},
 ];
+
+const arr = [1, 2, 3, 4, 5];
+
+each(arr, (num) => {
+	console.log(num, "hello");
+});
 
 document.getElementById("root").appendChild(List({ userList: users }));
